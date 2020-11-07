@@ -1,0 +1,12 @@
+library(readxl)
+cof=read.csv(file.choose())
+attach(cof)
+cof$Phillippines<-as.numeric(cof$Phillippines)
+cof$Indonesia<-as.numeric(cof$Indonesia)
+cof$Malta<-as.numeric(cof$Malta)
+cof$India<-as.numeric(cof$India)
+stacked_cof<-stack(cof)
+stacked_cof
+test<-table(stacked_cof$ind,stacked_cof$values)
+test
+chisq.test(test)

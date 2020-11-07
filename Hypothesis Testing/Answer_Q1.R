@@ -1,0 +1,7 @@
+library(readxl)
+cutlets<-read.csv(file.choose())
+attach(cutlets)
+shapiro.test(Unit.A)
+shapiro.test(Unit.B)
+var.test(Unit.A,Unit.B)
+t.test(Unit.A,Unit.B,alternative = "two.sided",conf.level = 0.95)
